@@ -707,7 +707,7 @@ def main():
     if ext == ".csv":
         encoding = detect_encoding(input_path)
         print(f"Detected encoding: {encoding}")
-        df = pd.read_csv(input_path, encoding=encoding, sep="\t")
+        df = pd.read_csv(input_path, encoding=encoding, sep=None, engine="python")
     else:
         df = pd.read_excel(input_path, engine="openpyxl")
 
